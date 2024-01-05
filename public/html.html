@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML</title>
+</head>
+
+<body>
+  <section>
+    <header>
+      <h1>THIS IS A HEADER SECTION (GOES ABOVE NAV BAR) FOR MY HTML AND CSS SITE</h1>
+    </header>
+  </section>
+  <hr />
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="./html.html">HTML</a>
+    <a href="./css.html">CSS</a>
+    <a href="./bootstrap.html">Bootstrap</a>
+    <a href="./flexbox.html">Flexbox</a>
+    <a href="./grid.html">Grid</a>
+  </nav>
+  </section>
+  <main>
+    <hr />
+    <section>
+      <h1>This is an h1</h1>
+      <h2>This is an h2</h2>
+      <h3>This is an h3</h3>
+      <h4>This is an h4</h4>
+      <h5>This is an h5</h5>
+      <h6>This is an h6</h6>
+    </section>
+    <hr />
+    <section>
+      <p>
+        This is a paragraph. Above is a horizontal rule, which is a void
+        element.
+      </p>
+    </section>
+    <hr />
+    <section>
+      <p>Below is an unordered list:</p>
+      <ul>
+        <li>List one</li>
+        <li>List two</li>
+        <ul>
+          <li>Unordered list within an unordered list</li>
+          <li>List items</li>
+        </ul>
+        <li>List three</li>
+      </ul>
+      <p>Below is an ordered list:</p>
+      <ol>
+        <li>List one</li>
+        <li>List two</li>
+        <ol>
+          <li>Ordered list within an ordered list</li>
+          <li>List items</li>
+        </ol>
+        <li>List three</li>
+      </ol>
+      <p>Below is an ordered list counting down</p>
+      <ol reversed>
+        <li>List item for reversed ordered list</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ol>
+      <p>Below is an ordered list starting at five</p>
+      <ol start="5">
+        <li>List one</li>
+        <li>List two</li>
+        <li>List three</li>
+      </ol>
+    </section>
+    <hr />
+    <section>
+      <a href="http://www.google.com">This is a hyperlink (anchor tag) to google</a>
+    </section>
+    <hr />
+    <section>
+      <p>Below is an image with an inline-set height of 200 pixels:</p>
+      <img src="../assets/images/me.jpg" height="200" alt="Matt smiling into the camera" />
+    </section>
+    <hr />
+    <section>
+      <p>Below is a table:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>This</th>
+            <th>Is</th>
+            <th>A</th>
+            <th>Table</th>
+            <th>Here</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Below is another table with colspan, rowspan, tfoot, colgroup (good for styles), and caption:</p>
+      <table>
+        <caption>A Table Caption That Defines a Table</caption>
+        <colgroup>
+        <thead>
+          <tr>
+            <th rowspan="2">Head</th>
+            <th colspan="2">Head</th>
+            <th rowspan="2">Head</th>
+          </tr>
+          <tr>
+            <th>Head again</th>
+            <th>Head again</th>
+          </tr>
+        </thead>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Td footer</td>
+            <td>Td footer</td>
+            <td>Td footer</td>
+            <td>Td footer</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+    <hr />
+    <section>
+      <p>This is subscript:</p>
+      <p>I like H<sub>2</sub>O</p>
+      <p>and</p>
+      <p><sup>1</sup>/<sub>2</sub> + <sup>1</sup>/<sub>2</sub> = 1</p>
+    </section>
+    <hr />
+    <section>
+      <p>This is how you text decorate in HTML (better if you use CSS in the future):</p>
+      <p><b>I am bold</b></p>
+      <p><em>I am italicized</em></p>
+    </section>
+    <hr />
+    <section>
+      <p>This is where comments that can only be seen by the developer are written in HTML (check HTML):</p>
+      <!--Comment Here-->
+    </section>
+    <hr />
+    <section>
+      <p>This<br>is<br>a<br>line<br>break.</p>
+    </section>
+    <hr />
+    <section>
+      <p>These are entity codes (start with an ampersand and ends with a semi-colon and can take names or numbers):</p>
+      &diamond; (named)
+      &copy; (named)
+      &cent; (named)
+      a&#771; (number)
+      a&#770; (number)
+      O&#769; (number)
+      &gt; (named-use entity code when using it outside of code or browser gets confused)
+    </section>
+    <hr />
+    <section>
+      <p>Below is a form with a variety of labels:</p>
+      <form class="" action="mailto:mhen1001@mail.com" method="post" enctype="text/plain">
+        <div><label>Label Name: <input class="" placeholder="Label Name" type="text" name="name/type of data (tells what data is)" required></label></div>
+        <div><label>Label Name: <input class="" placeholder="Label Name" type="text" name="name" required></label></div>
+        <div><label>Label Name: <input class="" placeholder="Label Name" type="textoremail" name="email" required></label>
+        </div>
+        <div><label>Box Check: <input class="" type="checkbox" name="youcheckedit" checked required></label></div>
+        <div><label>Enter a Number: <input class="" type="number" name="number" min="1" max="100" step="1" required></label>
+        </div>
+        <div><label>Slider Scale: <input class="" type="range" name="sliderscale" min="1" max="100" step="1" required></label>
+        </div>
+        <div>
+          <p>Radio Selector:</p>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>First Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Second Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Third Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Fourth Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Fifth Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Sixth Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Seventh Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Eighth Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Ninth Selection</label>
+          </div>
+          <div>
+            <label><input value="picked" type="radio" name="selection" required>Tenth Selection</label>
+          </div>
+        </div>
+        <div>
+          <label>Dropdown Selector:<br /><select name="selected" class="" required>
+              <option>--Description--</option>
+              <option>Option One</option>
+              <option>Option Two</option>
+              <option>Option Three</option>
+              <option>Option Four</option>
+              <option>Option Five</option>
+            </select></label>
+        </div>
+        <div>
+          <label>Color Picker:<input class="" name="pickedcolor" type="color" required></label>
+        </div>
+        <div>
+          <label>Text box:<br /><textarea rows="10" cols="50" name="entered text"
+              placeholder="Placeholder text" required></textarea></label>
+        </div>
+        <button class="">Button</button>
+      </form>
+    </section>
+    <hr />
+    <section>
+      <p>Search Websites:</p>
+      <form action="https://www.reddit.com/search">
+        <input class="" type="text">
+        <button class="">Search Reddit</button>
+      </form>
+      <form action="https://www.google.com/search">
+        <input class="" type="text">
+        <button class="">Search Google</button>
+      </form>
+      <form action="https://www.youtube.com/results">
+        <input class="" type="text">
+        <button class="">Search Youtube</button>
+      </form>
+    </section>
+  </main>
+  <section>
+    <hr />
+    <footer>
+      <p>HTML and CSS</p>
+      <br />
+      <a href="../index.html">Home</a>
+      <a href="./html.html">HTML</a>
+      <a href="./css.html">CSS</a>
+      <a href="./bootstrap.html">Bootstrap</a>
+      <a href="./flexbox.html">Flexbox</a>
+      <a href="./grid.html">Grid</a>
+      <a href="./about.html">About</a>
+      <br />
+      <a href=""><img src="../assets/images/facebook.svg" height="30" alt="facebook logo" /></a>
+      <a href=""><img src="../assets/images/twitter.svg" height="30" alt="twitter logo" /></a>
+      <a href=""><img src="../assets/images/linkedin.svg" height="30" alt="linkedin logo" /></a>
+      <a href=""><img src="../assets/images/envelope-solid.svg" height="30" alt="email symbol" /></a>
+      <p>©Matt Hendricks 2023</p>
+    </footer>
+  </section>
+</body>
+
+</html>

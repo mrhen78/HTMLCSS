@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <style>
+      .container {
+        display: flex;
+        gap: 10px;
+      }
+      .flexbox1 {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .container2 {
+        display: flex;
+        flex-direction: row;
+      }
+      .container3 {
+        display: flex;
+        flex-direction: column;
+      }
+      .container4 {
+        display: flex;
+      }
+      .container4 > * {
+        flex-basis: 300px;
+      }
+      .container5 {
+        display: flex;
+        flex-direction: column;
+      }
+      .container5 > * {
+        flex-basis: 100px;
+      }
+      .container6 {
+        display: flex;
+        gap: 10px;
+      }
+      .oneorder {
+        order: 3;
+      }
+      .twoorder {
+        order: 1;
+      }
+      .threeorder {
+        order: 0;
+      }
+      .container7 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+      }
+      .container8 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .container9 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap-reverse;
+      }
+      .container10 {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+      .container11 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .container12 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .container13 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+      }
+      .container14 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-around;
+      }
+      .container15 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-evenly;
+      }
+      .container16 {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        height: 100vh;
+      }
+      .container17 {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 100vh;
+      }
+      .container18 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100vh;
+      }
+      .container19 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100vh;
+      }
+      .one19 {
+        align-self: flex-start;
+      }
+      .container20 {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        height: 100vh;
+        flex-wrap: wrap;
+      }
+      .container21 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 10px;
+        height: 100vh;
+       }
+       .container22 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+       }
+       .container23 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100vh;
+       }
+       .container24 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+       }
+       .container24 > * {
+        max-width: 100px;
+       }
+       .container25 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+       }
+       .container25 > * {
+        min-width: 100px;
+       }
+       .containerflexbasisrow {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+       }
+       .containerflexbasisrow > * {
+        flex-basis: 200px;
+       }
+       .containerflexbasiscolumn {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 100vh;
+       }
+       .containerflexbasiscolumn {
+        flex-basis: 100px;
+       }
+       .container26 {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+       }
+       .container26 > * {
+        flex-grow: 1;
+        flex-shrink: 1;
+        }
+        .container27 {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .container27 > * {
+          flex: 1 1 0;
+        }
+        .container28 {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .oneratio {
+          flex:1;
+        }
+        .tworatio {
+          flex: 2;
+        }
+        .threeratio {
+          flex: 3;
+        }
+        .fourratio {
+          flex: 4;
+        }
+        .fiveratio {
+          flex:5;
+        }
+        .sixratio {
+          flex:6;
+        }
+        .sevenratio {
+          flex:7;
+        }
+        .eightratio {
+          flex: 8;
+        }
+        .nineratio {
+          flex: 9;
+        }
+        .tenratio {
+          flex: 10;
+        }
+        .elevenratio {
+          flex: 11;
+        }
+        .twelveratio {
+          flex: 12;
+        }
+        .container29 {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+        .container29 > * {
+          width: 100px
+        }
+    </style>
+  </head>
+  <body>
+    <section>
+      <header>
+        <h2>BASIC HTML AND CSS</h2>
+      </header>
+    </section>
+    <section></section>
+    <hr class="hrheader" />
+    <section>
+      <nav>
+        <ul>
+          <li>
+            <p>HTML and CSS</p>
+          </li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./html.html">HTML</a></li>
+          <li><a href="./css.html">CSS</a></li>
+          <li><a href="./bootstrap.html">Bootstrap</a></li>
+          <li><a href="./flexbox.html">Flexbox</a></li>
+          <li><a href="./grid.html">Grid</a></li>
+        </ul>
+      </nav>
+    </section>
+    <h1 style="text-align: center; margin: 20px">Flexbox (One Dimensional Layout Along the Main Axis)</h1>
+    <section>
+      <h2 style="text-align: center">Flexbox Containers with 10px gap set to inline-block</h2>
+      <div class="flexbox1">
+        <div class="container">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+        </div>
+      </div>
+      <div class="flexbox1">
+        <div class="container">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+        </div>
+      </div>
+      <div class="flexbox1">
+        <div class="container">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+        </div>
+      </div>
+      <div class="flexbox1">
+        <div class="container">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+        </div>
+      </div>
+    </section>
+    <hr style="width: 30%; border: 2px dashed black; margin: 3rem auto" />
+    <section>
+    <h2 style="text-align: center;">Flex Direction (sets the main axis)</h2>
+    <h3 style="text-align: center;">Row (default)</h3>
+    <div class="container2">
+      <div class="one"><p>item1</p></div>
+      <div class="two"><p>item2</p></div>
+      <div class="three"><p>item3</p></div>
+    </div>
+    <h3 style="text-align: center;">Column</h3>
+    <div class="container3">
+      <div class="one"><p>item1</p></div>
+      <div class="two"><p>item2</p></div>
+      <div class="three"><p>item3</p></div>
+    </div>
+  </section>
+  <hr style="width: 30%; border: 2px dashed black; margin: 3rem auto" />
+  <section>
+    <h2 style="text-align: center;">Flex-Basis (goes along the main axis)</h2>
+    <h3 style="text-align: center;">Row Flex-Basis</h3>
+    <div class="container4">
+      <div class="onefbr"><p>item1</p></div>
+      <div class="twofbr"><p>item2</p></div>
+      <div class="threefbr"><p>item3</p></div>
+    </div>
+    <h3 style="text-align: center;">Column Flex-Basis</h3>
+    <div class="container5">
+      <div class="onefbc"><p>item1</p></div>
+      <div class="twofbc"><p>item2</p></div>
+      <div class="threefbc"><p>item3</p></div>
+    </div>
+  </section>
+  <hr style="width: 30%; border: 2px dashed black; margin: 3rem auto" />
+    <section>
+      <h2 style="text-align: center;">Flex Layout</h2>
+      <h3 style="text-align: center;">Order Property</h3>
+      <div class="container6">
+        <div class="oneorder"><p>item1</p></div>
+        <div class="twoorder"><p>item2</p></div>
+        <div class="threeorder"><p>item3</p></div>
+      </div>
+      <h3 style="text-align: center;">Flex-Wrap Property Nowrap (Default)</h3>
+      <div class="container7">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Flex-Wrap Property Wrap</h3>
+      <div class="container8">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Flex-Wrap Property Wrap-Reverse</h3>
+      <div class="container9">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Flex-start Row (Row is default--justify content sets along main axis)</h3>
+      <div class="container10">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Flex-end Row</h3>
+      <div class="container11">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Center Row</h3>
+      <div class="container12">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Space-Between Row</h3>
+      <div class="container13">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Space-Around Row</h3>
+      <div class="container14">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Justify-content Space-Evenly Row</h3>
+      <div class="container15">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-Items (sets distribution along cross axis, height of container must be set in order for it to work) Flex-Start</h3>
+      <div class="container16">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-Items (cross axis) Flex-End</h3>
+      <div class="container17">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-Items (cross axis) Center</h3>
+      <div class="container18">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-Items (cross axis) Center and first item at top through Align-self</h3>
+      <div class="container19">
+        <div class="one19"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-content Center--Must have Flex-Wrap set to wrap--simimlar to align-items</h3>
+      <div class="container20">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Align-content flex-start --Must have Flex-Wrap set to wrap</h3>
+      <div class="container21">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+        <div class="seven"><p>item7</p></div>
+        <div class="eight"><p>item8</p></div>
+        <div class="nine"><p>item9</p></div>
+        <div class="ten"><p>item10</p></div>
+        <div class="eleven"><p>item11</p></div>
+        <div class="twelve"><p>item12</p></div>
+      </div>
+      <h3 style="text-align: center;">Flex-direction columm with justify-content center</h3>
+      <div class="container22">
+        <div class="one"><p>item1</p></div>
+        <div class="two"><p>item2</p></div>
+        <div class="three"><p>item3</p></div>
+        <div class="four"><p>item4</p></div>
+        <div class="five"><p>item5</p></div>
+        <div class="six"><p>item6</p></div>
+       </div>
+       <h3 style="text-align: center;">Flex-direction columm with justify-content flex-end</h3>
+       <div class="container23">
+         <div class="one"><p>item1</p></div>
+         <div class="two"><p>item2</p></div>
+         <div class="three"><p>item3</p></div>
+         <div class="four"><p>item4</p></div>
+         <div class="five"><p>item5</p></div>
+         <div class="six"><p>item6</p></div>
+        </div>
+      </section>
+      <hr style="width: 30%; border: 2px dashed black; margin: 3rem auto" />
+      <section>
+        <h2 style="text-align: center;">Flex Sizing (Priority is min-width/max-width then flex-basis then width then content width)</h2>
+        <h3 style="text-align: center;">Max-width 100px</h3>
+        <div class="container24">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Min-width 100px</h3>
+        <div class="container25">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Flex-basis 200px row</h3>
+        <div class="containerflexbasisrow">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Flex-basis 100px column</h3>
+        <div class="containerflexbasiscolumn">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Flex-shrink and flex-grow</h3>
+        <div class="container26">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Flex-shrink and flex-grow shorthand (in the order of grow, shrink, basis-0 turns it off, the used formula keeps everything equal)</h3>
+        <div class="container27">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Flex with different size ratios</h3>
+        <div class="container28">
+          <div class="oneratio"><p>item1</p></div>
+          <div class="tworatio"><p>item2</p></div>
+          <div class="threeratio"><p>item3</p></div>
+          <div class="fourratio"><p>item4</p></div>
+          <div class="fiveratio"><p>item5</p></div>
+          <div class="sixratio"><p>item6</p></div>
+          <div class="sevenratio"><p>item7</p></div>
+          <div class="eightratio"><p>item8</p></div>
+          <div class="nineratio"><p>item9</p></div>
+          <div class="tenratio"><p>item10</p></div>
+          <div class="elevenratio"><p>item11</p></div>
+          <div class="twelveratio"><p>item12</p></div>
+        </div>
+        <h3 style="text-align: center;">Width</h3>
+        <div class="container29">
+          <div class="one"><p>item1</p></div>
+          <div class="two"><p>item2</p></div>
+          <div class="three"><p>item3</p></div>
+          <div class="four"><p>item4</p></div>
+          <div class="five"><p>item5</p></div>
+          <div class="six"><p>item6</p></div>
+          <div class="seven"><p>item7</p></div>
+          <div class="eight"><p>item8</p></div>
+          <div class="nine"><p>item9</p></div>
+          <div class="ten"><p>item10</p></div>
+          <div class="eleven"><p>item11</p></div>
+          <div class="twelve"><p>item12</p></div>
+        </div>
+        </section>
+      <footer>
+        <p><a href="../index.html">HTML and CSS</a></p>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          |
+          <li><a href="./html.html">HTML</a></li>
+          |
+          <li><a href="./css.html">CSS</a></li>
+          |
+          <li><a href="./bootstrap.html">Bootstrap</a></li>
+          |
+          <li><a href="./flexbox.html">Flexbox</a></li>
+          |
+          <li><a href="./grid.html">Grid</a></li>
+          |
+          <li><a href="./about.html">About</a></li>
+        </ul>
+        <a href="https://www.facebook.com/opm.holder.50/"
+          ><img src="../assets/images/facebook.svg" alt="facebook logo"
+        /></a>
+        <a href="https://twitter.com/movies_other/"
+          ><img src="../assets/images/twitter.svg" alt="twitter logo"
+        /></a>
+        <a href="https://www.linkedin.com/in/matt-hendricks-144800181/"
+          ><img src="../assets/images/linkedin.svg" alt="linkedin logo"
+        /></a>
+        <a href="mailto:mhen1001@gmail.com"
+          ><img src="../assets/images/envelope-solid.svg" alt="email logo"
+        /></a>
+        <p>©Matt Hendricks 2023</p>
+      </footer>
+    </section>
+  </body>
+</html>

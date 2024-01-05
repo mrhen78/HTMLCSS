@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS</title>
+  <style>
+    h2,
+    p {
+      margin: 0;
+    }
+
+    .internal {
+      background-color: green;
+      height: 200px;
+      width: 200px;
+    }
+
+    img[height="200"] {
+      border: 10px solid black;
+    }
+
+    .csshr {
+      width: 30%;
+      border: 2px dashed black;
+      margin: 3rem auto;
+    }
+
+    .universal>* {
+      background-color: blue;
+      height: 200px;
+      width: 200px;
+    }
+
+    .group1,
+    .group2 {
+      background-color: green;
+      height: 200px;
+      width: 200px;
+    }
+
+    div>.child {
+      color: yellow;
+    }
+
+    .descendant p {
+      color: blue;
+    }
+
+    .chaining#chainingdiv {
+      height: 200px;
+      width: 200px;
+      background-color: orange;
+    }
+
+    .combiners p#combinersid {
+      color: brown;
+    }
+
+    .adjacent+p {
+      color: green;
+    }
+
+    .colors {
+      color: green;
+    }
+
+    .rgb {
+      color: rgb(93, 56, 14);
+    }
+
+    .hex {
+      color: #ffff00;
+    }
+
+    .propertypx {
+      font-size: 20px;
+    }
+
+    .comment {
+      color: red;
+    }
+
+    /*Comment goes here*/
+
+    .propertypt {
+      font-size: 20pt;
+    }
+
+    .propertyem {
+      font-size: 5em;
+    }
+
+    .propertyrem {
+      font-size: 5rem;
+    }
+
+    .propertycolor {
+      color: yellow;
+    }
+
+    .propertybold {
+      font-weight: bold;
+    }
+
+    .propertyitalicize {
+      font-style: italic;
+    }
+
+    .propertyfamily {
+      font-family: "Romanesco", "serif";
+    }
+
+    .propertycenter {
+      text-align: center;
+    }
+
+    .propertyrem,
+    .propertyem,
+    .propertypt,
+    .propertypx {
+      margin: 0;
+      padding: 0;
+    }
+
+    .position {
+      background-color: red;
+    }
+
+    .position {
+      background-color: green;
+    }
+
+    .specificity {
+      background-color: blue;
+    }
+
+    div[class="specificity"] {
+      background-color: purple;
+    }
+
+    #specific {
+      background-color: orange;
+    }
+
+    #type {
+      background-color: green;
+    }
+
+    .importance {
+      background-color: violet !important;
+      background-color: teal;
+    }
+
+    @media (min-width: 600px) {
+      .mediaquery {
+        font-size: 5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .mediaquery2 {
+        font-size: 5rem;
+      }
+    }
+
+    @media (min-width: 600px) and (max-width: 800px) {
+      .mediaquery3 {
+        font-size: 5rem;
+      }
+    }
+
+    .hover:hover {
+      color: purple;
+    }
+
+    .buttonactive:active {
+      background-color: blue;
+    }
+
+    section .buttonactive2:active {
+      background-color: green;
+    }
+
+    input[type="checkbox"]:checked {
+      outline: 2px solid orange;
+    }
+
+    input:checked+label {
+      color: red;
+    }
+
+    .nth:nth-of-type(2n) {
+      background-color: red;
+    }
+
+    .nth2.nth2:nth-of-type(3n) {
+      background-color: purple;
+    }
+
+    .firstline::first-line {
+      color: blue;
+      text-transform: uppercase;
+    }
+
+    .after::after {
+      content: "David Lynch";
+      color: red;
+    }
+
+    .before::before {
+      content: "Tim Burton";
+      color: green;
+    }
+
+    .firstletter::first-letter {
+      color: violet;
+    }
+
+    .selection::selection {
+      color: red;
+      background-color: yellow;
+    }
+
+    .transition {
+      transition: margin-left 3s;
+    }
+
+    .transition:hover {
+      margin-left: 500px;
+    }
+
+    .transition:nth-of-type(1) {
+      transition-timing-function: ease-in;
+    }
+
+    .transition:nth-of-type(2) {
+      transition-timing-function: ease-out;
+    }
+
+    .colortransition {
+      transition: color 1s ease-in, font-size 3s;
+    }
+
+    .colortransition:hover {
+      color: yellow;
+      font-size: 5rem;
+    }
+
+    .transition:nth-of-type(3) {
+      transition-timing-function: cubic-bezier(0.7, 0, 0.84, 5);
+    }
+
+    .transform {
+      background-color: #2a9d8f;
+      border: 5px solid #264653;
+      color: #eae2b7;
+      padding: 0.7em;
+      width: 300px;
+      font-size: 1.8em;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .transform:nth-of-type(2n) {
+      background-color: #e9c46a;
+    }
+
+    .transform:nth-of-type(3n) {
+      background-color: #f4a261;
+    }
+
+    .transform:nth-of-type(4n) {
+      background-color: #e76f51;
+    }
+
+    .transformsection:first-of-type .transform:nth-of-type(1) {
+      transform: rotate(45deg);
+    }
+
+    .transformsection:first-of-type .transform:nth-of-type(2) {
+      transform: scale(0.6);
+    }
+
+    .transformsection:first-of-type .transform:nth-of-type(3) {
+      transform: translateX(400px);
+    }
+
+    .transformsection:first-of-type .transform:nth-of-type(4) {
+      transform: translate(-600px, 50px);
+    }
+
+    .transformsection:nth-of-type(2) .transform:nth-of-type(1) {
+      transform: skew(30deg);
+    }
+
+    .transformsection:nth-of-type(2) .transform:nth-of-type(2) {
+      transform: skew(10deg, 5deg);
+    }
+
+    .transformsection:nth-of-type(2) .transform:nth-of-type(3) {
+      transform: rotate(-20deg) scale(1.3);
+    }
+
+    .transformsection:nth-of-type(2) .transform:nth-of-type(4) {
+      transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
+    }
+
+    .tranformsection:nth-of-type(2) {
+      transform: scale(0.7) translateX(500px);
+    }
+
+    td,
+    th {
+      border: 2px solid black;
+      padding: 8px;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-size: 1.5rem;
+      margin: 5rem auto;
+    }
+
+    th {
+      background-color: rgb(87, 86, 86);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgb(196, 196, 202);
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ddd
+    }
+
+    tr:hover {
+      background-color: white;
+    }
+
+    .imagebackgroundfixed {
+      background: center/cover url(../assets/images/me.jpg);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    .imagebackgroundnotfixed {
+      background: center/cover url(../assets/images/me.jpg);
+      height: 100vh;
+    }
+
+    .hoverbutton {
+      background: none;
+      color: #ffa260;
+      border: 2px solid;
+      padding: 1em 2em;
+      font-size: 1em;
+      transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .hoverbutton:hover {
+      border-color: #f1ff5c;
+      color: white;
+      box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+      transform: translateY(-0.25em);
+      cursor: pointer;
+    }
+
+    .hoverbuttonsection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #151b29;
+    }
+
+    .gallery {
+      width: 30%;
+      margin: calc(10%/8);
+      }
+  </style>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="icon" href="../assets/images/favicon.ico" />
+</head>
+
+<body>
+  <section>
+    <header>
+      <h2>BASIC HTML AND CSS</h2>
+    </header>
+  </section>
+  <hr class="hrheader" />
+  <section>
+    <nav>
+      <ul>
+        <li>
+          <p>HTML and CSS</p>
+        </li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./html.html">HTML</a></li>
+        <li><a href="./css.html">CSS</a></li>
+        <li><a href="./bootstrap.html">Bootstrap</a></li>
+        <li><a href="./flexbox.html">Flexbox</a></li>
+        <li><a href="./grid.html">Grid</a></li>
+      </ul>
+    </nav>
+  </section>
+  <main>
+    <h1 style="text-align: center;">CSS</h1>
+    <section>
+      <h2>Adding CSS</h2>
+      <div class="addingcss">
+        <div style="
+              background: blue;
+              height: 200px;
+              width: 200px;
+              margin: 0;
+              padding: 0;
+            ">
+          <p>Inline CSS</p>
+        </div>
+        <div class="internal">
+          <p>Internal CSS with class</p>
+        </div>
+        <div id="external">
+          <p>External CSS with ID</p>
+        </div>
+      </div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 class="colors">CSS Colors</h2>
+      <h2 class="rgb">RGB Colors</h2>
+      <h2 class="hex">Hex Value Colors</h2>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <p class="comment">
+        This is where a comment would go (check internal CSS)
+      </p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2>Font Properties</h2>
+      <p class="propertypx">I am increased by 20 pixels</p>
+      <p class="propertypt">I am increased by 20 points</p>
+      <p class="propertyem">I am increased by 5 ems</p>
+      <p class="propertyrem">I am increased by 5 rems</p>
+      <p class="propertycolor">My color is changed</p>
+      <p class="propertybold">I am bold</p>
+      <p class="propertyitalicize">I am italicized</p>
+      <p class="propertyfamily">I am a different font family</p>
+      <p class="propertycenter">I am centered text</p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 class="selectors">Different Selectors</h2>
+      <div>
+        <p>
+          Attribute Selector via internal CSS shown with a centered image:
+        </p>
+        <img src="../assets/images/me.jpg" height="200" alt="Matt smiling into the camera"
+          style="display: block; margin-left: auto; margin-right: auto" />
+      </div>
+      <p>Parent/child and Universal (all) Selector:</p>
+      <div class="universal">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <p>Grouping Selectors:</p>
+        <div class="group1"></div>
+        <div class="group2"></div>
+      </div>
+      <div>
+        <p>Child Selector:</p>
+        <div>
+          <p class="child">I AM A YELLOW CHILD</p>
+        </div>
+      </div>
+      <div>
+        <p>Direct Descendant Combination (not a grandparent):</p>
+        <div class="descendant">
+          <p>I am blue</p>
+        </div>
+      </div>
+      <div>
+        <p>Chaining Selectors:</p>
+        <div class="chaining" id="chainingdiv"></div>
+      </div>
+      <div>
+        <p>Combining Combiners:</p>
+        <div class="combiners">
+          <p id="combinersid">I am brown</p>
+        </div>
+      </div>
+      <div>
+        <p class="adjacent">Adjacent Selector:</p>
+        <p>I am green</p>
+      </div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Specificity and Inheritance</h2>
+      <p>Position on sheet via internal CSS:</p>
+      <div style="height: 200px; width: 200px" class="position"></div>
+      <p>Specicificity:</p>
+      <p>
+        Element name selector is least specific--if I give an example it will
+        change all general elements so I'm not going to.
+      </p>
+      <p>Next is the class selector.</p>
+      <p>Next is the attribute selector.</p>
+      <p>Next is the ID selector--the most specific--via internal CSS.</p>
+      <div style="height: 200px; width: 200px" class="specificity" id="specific"></div>
+      <p>Type (goes from external to internal to inline):</p>
+      <div style="height: 200px; width: 200px; background-color: yellow" id="type"></div>
+      <p>Importance (everything else is put aside):</p>
+      <div style="height: 200px; width: 200px" class="importance"></div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">
+        CSS Box Model Concept (PBM-Padding, Border, and Margin)
+      </h2>
+      <p>A black div with 50% width and 200px height:</p>
+      <div style="width: 50%; height: 200px; background-color: black"></div>
+      <p>A clear div with 30px border and 30px padding</p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: 30px solid black;
+            padding: 30px;
+          "></div>
+      <p>A clear div with a 30px border:</p>
+      <div style="height: 200px; width: 200px; border: 30px solid black"></div>
+      <p>
+        A clear div with 30px top border and 30px bottom border using
+        border-top and border-bottom:
+      </p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border-top: 30px solid black;
+            border-bottom: 30px solid black;
+          "></div>
+      <p>
+        A clear div with 30px top border 20px right border 10px bottom border
+        and 5px left border using border-width 4 values:
+      </p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: solid black;
+            border-width: 30px 20px 10px 5px;
+          "></div>
+      <p>
+        A clear div with 30px top border 20px left and right and 10px bottom
+        border using border-width 3 values:
+      </p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: solid black;
+            border-width: 30px 20px 10px;
+          "></div>
+      <p>
+        A clear div with 30px top and bottom and 20px left and right using
+        border-width 2 values:
+      </p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: solid black;
+            border-width: 30px 20px;
+          "></div>
+      <p>A clear div with 30px border using border-width 1 value:</p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: solid black;
+            border-width: 30px;
+          "></div>
+      <p>A clear div with a 30px border and a 30px margin:</p>
+      <div style="
+            height: 200px;
+            width: 200px;
+            border: 30px solid black;
+            margin: 30px;
+          "></div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Positioning</h2>
+      <p>Static positiong, default, doesn't do anything</p>
+      <p style="position: relative; left: 50px">
+        Relative positioning, relative to static
+      </p>
+      <div style="position: relative; height: 200px">
+        <p style="position: absolute; left: 200px; top: 100px">
+          This is absolute position in realtion to its parent, which is set to
+          relative
+        </p>
+      </div>
+      <div style="height: 200px">
+        <p style="position: absolute; left: 100px">
+          Absolute position relative to top left corner of the screen
+        </p>
+      </div>
+      <div style="height: 200px">
+        <p style="position: absolute; left: 10%">
+          Absolute position relative to top left corner of the screen using
+          percentages
+        </p>
+      </div>
+      <p>Z-index with absolute positioning:</p>
+      <img src="../assets/images/me.jpg" style="height: 200px; position: absolute; left: 90px" alt="Matt smiling into the camera" />
+      <img src="../assets/images/me.jpg" style="height: 200px; position: absolute; z-index: 1" alt="Matt smiling into the camera" />
+      <p style="position: fixed; top: 20px; left: 10px">
+        Fixed positioning (will be at very top of BROWSER) from positioning
+        section:
+      </p>
+    </section>
+    <hr class="csshr" style="margin-top: 20rem" />
+    <section>
+      <h2 style="text-align: center">Display</h2>
+      <p style="width: 50%; margin-left: auto; margin-right: auto; padding: 5%">
+        This is a default block element that can only exist on its own line.
+        It's width has been adjusted to 50%, has been centered using
+        auto-margin, and has a 5% padding;
+      </p>
+      <p style="display: inline; width: 20%">
+        This is a default block set to inline. Its width cannot be adjusted,
+        so it will take up the whole line if it is long enough to (I'm mainly
+        typing a long line here to prove an example.)
+      </p>
+      <p style="display: inline-block; width: 20%">
+        This is a default block item set to inline-block so it can have other
+        items on the same line and also have adjusted width.
+      </p>
+      <p style="display: inline-block; width: 20%">
+        This is a default block item set to inline-block so it can have other
+        items on the same line and also have adjusted width.
+      </p>
+      <p>
+        This paragraph has an
+        <span style="color: purple; font-weight: bold">inline span</span> tag
+        wrapped around it to single out text within a paragraph. Span is an
+        inline element.
+      </p>
+      <p>
+        Below are default inline elements that can have different items on the
+        same line (and they have rounded edges using border-radius):
+      </p>
+      <img src="../assets/images/me.jpg" style="width: 30%; border-radius: 50%" alt="Matt smiling into the camera" />
+      <img src="../assets/images/me.jpg" style="width: 30%; border-radius: 50%" alt="Matt smiling into the camera"/>
+      <p style="display: inline; width: 5%">
+        This is a block element set to inline so it can fit on the same line
+        as other items
+      </p>
+      <p>
+        Below are inline elements set to block so they don't sit ont the same
+        line.
+      </p>
+      <img src="../assets/images/me.jpg" style="display: block; width: 30%; border-radius: 50%" alt="Matt smiling into the camera"/>
+      <img src="../assets/images/me.jpg" style="display: block; width: 30%; border-radius: 50%" alt="Matt smiling into the camera"/>
+      <p>
+        Below is a paragraph is that is set to display: none (which means it
+        is invisible and taken out of the flow):
+      </p>
+      <p style="display: none">I'm am an invisible paragraph</p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Float Property</h2>
+      <img src="../assets/images/me.jpg" style="height: 200px; float: left; margin-bottom: 1rem" alt="Matt smiling into the camera"/>
+      <p style="margin-bottom: 12rem">
+        I am a paragraph to the right of an image set to float left. I need to
+        be longer so I am going to type out a longer sentence to accomodate
+        the need. Boy this is tedious and boring. But I better keep typing to
+        add more space. I should probably use the lorem ipsum generator.
+      </p>
+
+      <img src="../assets/images/me.jpg" style="height: 200px; float: right; margin-bottom: 1rem" alt="Matt smiling into the camera" />
+      <p>
+        I am a paragraph to the left of an image set to float right. I need to
+        be longer so I am going to type out a longer sentence to accomodate
+        the need. Boy this is tedious and boring. But I better keep typing to
+        add more space. I should probably use the lorem ipsum generator.
+      </p>
+      <p style="clear: both; text-align: center">
+        This paragraph is cleared on both sides so it doesn't float. It's set
+        to center, as well.
+      </p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Media Queries</h2>
+      <p class="mediaquery" style="margin-bottom: 1rem">
+        I am a paragraph that will display at 5rem on screens 600px and
+        higher.
+      </p>
+      <p class="mediaquery2" style="margin-bottom: 1rem">
+        I am a paragraph that will display at 5rem on screens 600px and lower.
+      </p>
+      <p class="mediaquery3" style="margin-bottom: 1rem">
+        I am a paragraph that will display at 5rem on screens between 600 and
+        800px.
+      </p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Pseudo Classes</h2>
+      <p class="hover">I am purple when hovered over</p>
+      <div>
+        <button class="buttonactive">
+          I am a Button that changes when activated
+        </button>
+      </div>
+      <div>
+        <button class="buttonactive2">
+          I am a button with a descendant combination selector that changes
+          when activated.
+        </button>
+      </div>
+      <div>
+        <input class="" type="checkbox" name="youcheckedit" checked required />
+        <label>Box Check that changes when checked--label must come after the
+          input</label>
+      </div>
+      <p>nth of type: every other box is red:</p>
+      <div>
+        <div class="nth" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth" style="height: 200px; width: 200px; border: 3px solid black"></div>
+      </div>
+      <p>nth of type: every third box is purple:</p>
+      <div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+        <div class="nth2" style="height: 200px; width: 200px; border: 3px solid black"></div>
+      </div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Pseudo Elements</h2>
+      <p class="firstline" style="
+            width: 50%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          ">
+        Hello. I am a paragraph that displays the first-line pseudo element. I
+        hope I am long enough to provide an example, here. I'm not sure what
+        else to do, here. I'm trying to make this as long as possible to prove
+        a point.
+        <span class="after">And I am going to display the after pseudo element by saying David
+          Lynch.</span><span class="before">I am going to display the before pseudo element by saying Tim
+          Burton.</span>
+      </p>
+      <p class="firstletter" style="
+            width: 50%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+          ">
+        I am going to display the first letter pseudo element.
+      </p>
+      <p class="selection">I am the selection pseudo element.</p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Inheritance</h2>
+      <p style="color: red">
+        I am set to red and the
+        <button style="color: inherit">button</button> child within me will
+        inherit that color since I am the parent and it is set to inherit my
+        color.
+      </p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Alpha Channel/Opacity</h2>
+      <p style="color: rgba(0, 209, 112, 0.5)">
+        I am a paragraph with rgba (red, green, blue, alpha) set to half
+        opacity.
+      </p>
+      <div style="opacity: 0.5">
+        <p>
+          I am set to half opacity in my parent container. All descendants
+          will be half opacity.
+        </p>
+      </div>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Transitions</h2>
+      <p class="transition">I am ease-in</p>
+      <p class="transition">I am ease-out</p>
+      <p class="colortransition">I will change color and grow</p>
+      <p class="transition">I use cubic belzer</p>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Transform With nth of type Selectors</h2>
+      <section class="transformsection">
+        <p class="transform">rotate(45 deg)</p>
+        <p class="transform">Scale.6</p>
+        <p class="transform">translateX(400px)</p>
+        <p class="transform">translate(-600px, 50px)</p>
+      </section>
+      <section class="transformsection">
+        <p class="transform">skew(30deg)</p>
+        <p class="transform">skew(10deg, 5deg)</p>
+        <p class="transform">rotate(-20deg) scale(1.3)</p>
+        <p class="transform">translateX(-500px) rotate(0.5turn) scaleY(1.5)</p>
+      </section>
+    </section>
+    <hr class="csshr" />
+    <section>
+      <h2 style="text-align: center">Table with CSS Borders and Even/Odd nth of type Selectors</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>This</th>
+            <th>Is</th>
+            <th>A</th>
+            <th>Table</th>
+            <th>Here</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+          <tr>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+            <td>Table data</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <div class="imagebackgroundfixed">
+        <h2 style="text-align: center; color: white; padding-top: 5rem;">Image Cover/Background Fixed</h2>
+      </div>
+    </section>
+    <section>
+      <div class="imagebackgroundnotfixed">
+        <h2 style="text-align: center; color: white; padding-top: 5rem;">Image Cover/Background Not Fixed</h2>
+      </div>
+    </section>
+    <section>
+      <h2 style="text-align: center">Hover Button</h2>
+      <div class="hoverbuttonsection">
+        <button class="hoverbutton">Hover Me</button>
+      </div>
+    </section>
+    <section>
+      <h2 style="text-align: center;">Image Gallery</h2>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera">
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera" >
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+      <img class="gallery" src="../assets/images/me.jpg" alt="Matt smiling into the camera"/>
+    </section>
+  </main>
+  <footer>
+    <p><a href="../index.html">HTML and CSS</a></p>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      |
+      <li><a href="./html.html">HTML</a></li>
+      |
+      <li><a href="./css.html">CSS</a></li>
+      |
+      <li><a href="./bootstrap.html">Bootstrap</a></li>
+      |
+      <li><a href="./flexbox.html">Flexbox</a></li>
+      |
+      <li><a href="./grid.html">Grid</a></li>
+      |
+      <li><a href="./about.html">About</a></li>
+    </ul>
+    <a href="https://www.facebook.com/opm.holder.50/"><img src="../assets/images/facebook.svg"
+        alt="facebook logo" /></a>
+    <a href="https://twitter.com/movies_other/"><img src="../assets/images/twitter.svg" alt="twitter logo" /></a>
+    <a href="https://www.linkedin.com/in/matt-hendricks-144800181/"><img src="../assets/images/linkedin.svg"
+        alt="linkedin logo" /></a>
+    <a href="mailto: mhen1001@gmail.com"><img src="../assets/images/envelope-solid.svg" alt="email logo" /></a>
+    <p>©Matt Hendricks 2023</p>
+  </footer>
+  </section>
+</body>
+
+</html>
